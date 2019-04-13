@@ -11,7 +11,10 @@ console.log('Hello World from Webpacker')
 
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
+import "css/application.scss"
 
 const application = Application.start()
 const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
+
+require.context("img", true)
